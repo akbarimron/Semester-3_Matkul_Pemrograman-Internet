@@ -1,0 +1,1 @@
+This is first meet of Programming internet in PILKOM 3B, we learn how to make website, with simple and basic HTML structure
