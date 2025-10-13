@@ -1,0 +1,142 @@
+/* definisikan warna dari color palette */
+:root {
+  --white: #F1F7ED;
+  --dark-green: #243E36;
+  --green: #7CA982;
+  --light-green: #E0EEC6;
+  --brown: #C2A83E;
+}
+
+/* per grid an */
+div {
+    border: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr  ;
+    gap: 8px;
+    padding: 16px;
+}
+
+
+
+.grid_item {
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid_item.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.grid_item p {
+    color: #243E36;
+    margin: 0;
+    padding: 0;
+    padding-top: 16px;
+}
+
+.grid_item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* display: block; */
+}
+
+/* ukuran template */
+
+.square {
+    grid-row-end: span 1;
+    grid-column-end: span 1;
+}
+
+.tall {
+    grid-row-end: span 2;
+    grid-column-end: span 1;
+}
+
+.wide {
+    grid-row-end: span 1;
+    grid-column-end: span 2;
+}
+
+.full_wide {
+    grid-row-end: span 1;
+    grid-column-end: span 4;
+}
+
+.mega_wide {
+    grid-row-end: span 2;
+    grid-column-end: span 2;
+}
+
+.light_green {
+    background-color: var(--light-green);
+}
+
+.green {
+    background-color: var(--green);
+}
+
+/* default body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: var(--white);
+}
+
+main {
+    flex: 1;
+}
+
+/* per table an */
+table,
+th,
+td {
+    border: 1px solid var(--dark-green);
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+/* per nav an */
+header {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none; /* hilangkan bullet */
+    margin: 0;
+    /* margin-left: 16px; */
+    padding: 8px;
+    display: flex; /* menu sejajar ke kanan */
+    gap: 20px; /* jarak antar menu */
+}
+
+nav li a {
+    text-decoration: none;
+    color: var(--dark-green);
+
+    /* background-color: var(--light-green); */
+    background-color: white;
+    border-radius: 8px;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+nav li a:hover {
+    font-weight: bold;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- bagian utama -->
+        <div class="grid">
+            <!-- bagian foto paling kiri -->
+            <div class="grid_item center square light_green">
+                <p>Foto</p>
+                <img src="https://drive.google.com/thumbnail?id=1J5NMuqyH5_Mm32kAl7DJtzZ1IE0RBk5w&sz"
+                    alt="gambar drive">
+            </div>
+            
+            <div class="grid_item tall light_green">
+                <p>Sebelah kiri saya ada foto</p>
+                <br>
+                <p>Tinggi saya sama dengan tinggi 2 grid item di sebelah kanan</p>
+            </div>
+
+            <div class="grid_item tall light_green">
+                Lebar saya sama dengan lebar total 2 grid item di bawah saya
+            </div>
+            
+            
+            
+            <div class="grid_item tall light_green">
+                Saya di bawah foto
+            </div>
+
+
+            <div class="grid_item square     green">
+                Tinggi saya menentukan tinggi grid item "Saya di bawah foto"
+            </div>
+
+            <div class="grid_item square light_green">
+                Kalau saya lebih tinggi, grid item sebelah kiri saya mengikuti tinggi saya
+                <br><br>
+                Saya contohkan ya
+                <br><br>
+                Nah kan
+            </div>
+
+            <div class="grid_item wide light_green">
+                Saya kecil tapi lebar
+            </div>
+
+            <div class="grid_item square light_green">
+                Saya kecil
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="grid">
+            <div class="grid_item center full_wide green">
+                <b>JUDUL</b>
+            </div>
+            <div class="grid_item center square light_green">
+                Sayap Kiri
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--green)" viewBox="0 0 24 24">
+                    <path d="M12 0L15.09 8H24l-6.545 4.755L18.18 24 12 18l-6.18 6L6.545 12.755 0 8h8.91z" />
+                </svg>
+            </div>
+            <div class="grid_item center wide green" style="background-color: white;">
+                Fokus Utama
+
+                <div style="display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--brown)"
+                        viewBox="0 0 24 24">
+                        <path d="M12 0L15.09 8H24l-6.545 4.755L18.18 24 12 18l-6.18 6L6.545 12.755 0 8h8.91z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--brown)"
+                        viewBox="0 0 24 24">
+                        <path d="M12 0L15.09 8H24l-6.545 4.755L18.18 24 12 18l-6.18 6L6.545 12.755 0 8h8.91z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--brown)"
+                        viewBox="0 0 24 24">
+                        <path d="M12 0L15.09 8H24l-6.545 4.755L18.18 24 12 18l-6.18 6L6.545 12.755 0 8h8.91z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="grid_item center square light_green">
+                Sayap Kanan
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--dark-green)"
+                    viewBox="0 0 24 24">
+                    <path d="M12 0L15.09 8H24l-6.545 4.755L18.18 24 12 18l-6.18 6L6.545 12.755 0 8h8.91z" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="grid_item center full_wide green">
+                <b>JUDUL</b>
+            </div>
+            <div class="grid_item center full_wide light_green">
+                <img src="https://drive.google.com/thumbnail?id=1J5NMuqyH5_Mm32kAl7DJtzZ1IE0RBk5w&sz"
+                    alt="gambar drive">
+
+                <p>Fokus Utama Sangat Besar</p>
+            </div>
+        </div>
+    </main>
+
+    <p style="text-align: center; background-color: var(--brown); margin: 0; padding: 4px;">&copy; 2025 Muhammad Syukri
+        (2305166). All rights
+        reserved.</p>
+</body>
+
+</html>

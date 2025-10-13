@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <nav id="popup">
+            <h1 id="hitung"></h1>
+            <button onclick="tutup()">close </button>
+        </nav>
+        <nav id="popup2">
+            <form action="#">
+                <input type="text" id="namauser" placeholder="masukkan nama">
+                <input type="number" id="nilaiuser" placeholder="masukkan nilai">
+                <h1 class="red" id="alerting"></h1>
+            </form>
+            <button onclick="konfirmasi()">konfirmasi</button>
+            <button class="red" onclick="tutup2()">close </button>
+        </nav>
+
+        <section>
+            <h1 id="rubahnama">Hai ... nilaimu ... </h1>
+            <h1 id="pesannilai"></h1>
+        </section>
+        <section>
+            <button id="tambah" onclick="tambah()">tambah</button>
+            <button class="kurangi" onclick="kurangi()">Kurangi</button>
+            <button onclick="hasil()">hasil</button>
+            <button onclick="buka()">Change name</button>
+        </section>
+        <section id="hasil">
+            <h1 id="nilai1">0</h1>
+            <h1 id="operasi">x</h1>
+            <h1 id="nilai2">5</h1>
+        </section>
+    </main>
+    
+        
+    <script src="script.js"></script>
+</body>
+
+</html>
