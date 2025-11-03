@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tes.css">
+    <!-- Font Awesome CDN for icons -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Calisbare</h1>
+            <ul>
+                <li><a href="#aboutme">About</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./Page/assignments.html">Assignments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- SECTION HEADER FOTO BESAR -->
+        <section id="headporto">
+            <h1>Hi, <br>I'am Muhamad Akbar Imron</h1>
+            <p>Backend Developer and Professional Video Editor</p>
+            <a href="./download/CV_Muhamad akbar imron.pdf"><button>Download CV</button></a>
+            <a href="https://wa.me/6281999782893" target="_blank"><button class="normal">Contact Now</button></a>
+        </section>
+
+        <!-- SECTION ABOUT ME -->
+        <section id="aboutme">
+          
+                <img src="assets/Frame 2.png" alt="gambar foto gue">
+            
+            <section>
+                <h1>About me</h1>
+                <p>Saya adalah seorang Backend Developer yang bersemangat dalam membangun sistem yang kuat dan efisien. Dengan keahlian mendalam dalam bahasa pemrograman seperti Python, Javascript, PHP, dan SQL, saya mampu menciptakan solusi web development yang solid dan terintegrasi. Saya senang memecahkan masalah kompleks dan selalu mencari cara inovatif untuk meningkatkan performa dan fungsionalitas aplikasi. <br> <br>
+
+                Silakan Download CV saya untuk melihat detail lebih lanjut mengenai pengalaman dan proyek-proyek yang telah saya kerjakan, atau Contact Now jika Anda ingin berdiskusi lebih lanjut.
+
+</p>
+            </section>
+        </section>
+
+        <!-- SECTION SKILL -->
+        <section id="skill">
+            <h1>Skills</h1>
+            <section>
+                <p>Python</p>
+                <p>Javascript</p>
+                <p>PHP and SQL</p>
+                <p>Web Development</p>
+                <p class="red">VFX Editor</p>
+                <p class="red">Motion graphic Editor</p>
+                <p class="red">Graphic Designer</p>
+                <p class="red">Cinematography</p>
+            </section>
+        </section>
+
+        <!-- SECTION PORTOFOLIO -->
+        <section id="portofolio">
+            <h1>Portofolio</h1>
+            <section>
+                <h1>Landing Page Sederhana</h1>
+                <p>Membuat landing page sederhana menggunakan framework bootstrap.</p>
+                <img src="./assets/landingpage.png" alt="">
+            </section>
+            <section>
+                <h1>Working Login Page with Backend</h1>
+                <p>Backend dengan PHP dan MySQL, serta frontend menggunakan HTML, CSS, dan JavaScript.</p>
+                <img src="./assets/login.png" alt="">
+            </section>
+            <section>
+                <h1>Simple Counter Javascript</h1>
+                <p>Membuat counter sederhana menggunakan JavaScript.</p>
+                 <img src="./assets/counter.png" alt="">
+            </section>
+            <a href="https://www.linkedin.com/in/muhamad-akbar-imron-31196131a/" target="_blank"><button> Lihat Semua  Portofolio</button></a>
+        </section>
+        
+        <!-- SECTION CONTACT     -->
+        <section id="contact">
+            <h1>Contact </h1>
+            <section>
+                <section>
+                    <a href="https://www.instagram.com/akbar_diy/" target="_blank">
+                        <button type="button"><i class="fab fa-instagram"></i> akbar_diy</button>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.youtube.com/@Calisbare" target="_blank">
+                        <button type="button"><i class="fab fa-youtube"></i> Calisbare</button>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.linkedin.com/in/muhamad-akbar-imron-31196131a/" target="_blank">
+                        <button type="button"><i class="fab fa-linkedin"></i> Muhamad Akbar Imron</button>
+                    </a>
+                </section>
+                <section>
+                    <a href="mailto:akbarimrons@gmail.com">
+                        <button type="button"><i class="fas fa-envelope"></i> akbarimrons@gmail.com</button>
+                    </a>
+                </section>
+            </section>
+        </section>
+        
+    </main>
+
+    <footer id="footer">
+        <p>© 2025 Akbar Imron. All Right Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll untuk semua link dengan href yang dimulai dengan #
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

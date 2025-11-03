@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grace Portfolio</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="logo">Grace</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education & Work Experience</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+            <button
+                class="btn btn-primary"
+                onclick="window.open('https://wa.me/6281323181970?text=Halo%20Grace%eeeaaa', '_blank')"
+            >
+                Contact Me
+            </button>
+        </header>
+
+        <section class="hero-section" id="home">
+            <div class="container hero-content-wrapper">
+                <div class="hero-text">
+                    <p class="greeting">- Hello</p>
+                    <h1 class="title-grace">
+                        I'm <span class="font-purple">Grace,</span> <br />
+                        Product Designer
+                    </h1>
+                </div>
+
+                <div class="hero-image-area">
+                    <div class="image-bg-shape"></div>
+                    <img src="images/grace.png" alt="Jenny Alexander" class="hero-image" />
+
+                    <div class="hero-controls">
+                        <button class="btn btn-primary" onclick="location.href='#about'">
+                            Portfolio &rarr;
+                        </button>
+                        <button
+                            class="btn btn-outline-primary"
+                            onclick="window.open('https://wa.me/6281323181970?text=Halo%20Grace%20cantik', '_blank')"
+                        >
+                            Hire Me
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Happy Clients</span>
+
+                    <div class="avatars">
+                        <span class="avatar">
+                            <img src="images/1.png" alt="Client 1" class="avatar-img" />
+                        </span>
+
+                        <span class="avatar">
+                            <img src="images/2.png" alt="Client 2" class="avatar-img" />
+                        </span>
+
+                        <span class="avatar">
+                            <img src="images/3.png" alt="Client 3" class="avatar-img" />
+                        </span>
+
+                        <span class="avatar">
+                            <img src="images/4.png" alt="Client 4" class="avatar-img" />
+                        </span>
+
+                        <span class="plus-icon"
+                            ><span class="material-symbols-rounded text-white"> add_2 </span></span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="service-tag-bar" id="service">
+            <div class="baris-keahlian">
+                <span>Web Design</span>
+                <span class="material-symbols-rounded"> asterisk </span>
+                <span>App Design</span>
+                <span class="material-symbols-rounded"> asterisk </span>
+                <span>Dashboard</span>
+                <span class="material-symbols-rounded"> asterisk </span>
+                <span>Wireframe</span>
+                <span class="material-symbols-rounded"> asterisk </span>
+                <span>User Research</span>
+            </div>
+        </div>
+
+        <section class="my-services-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle">- Services</p>
+                    <h2 class="judul-section">My Services</h2>
+                    <button class="btn btn-secondary-outline dm-sans fw-600">
+                        View All Services
+                    </button>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon-circle background-light-transparant">
+                            <i class="fas fa-cube text-white"></i>
+                        </div>
+                        <h3 class="text-white dm-sans">UI/UX Design</h3>
+                        <p class="text-white">
+                            Providing creative and user-centered UI/UX design solutions that blend
+                            functionality, aesthetics, and seamless digital experiences.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-circle background-light-transparant">
+                            <i class="fas fa-mobile-alt text-white"></i>
+                        </div>
+                        <h3 class="text-white dm-sans">App Design</h3>
+                        <p class="text-white">
+                            Crafting intuitive and visually engaging app designs that deliver smooth
+                            and meaningful user experiences.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-circle background-light-transparant">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <h3 class="text-white dm-sans">Web Design</h3>
+                        <p class="text-white">
+                            Creating modern and responsive web designs that combine clarity,
+                            creativity, and seamless user interaction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-me-section" id="about">
+            <div class="container about-wrapper">
+                <div class="experience-box">
+                    <span class="years-number">4</span>
+                    <p class="years-label">Years of Experience</p>
+                    <span class="name-vertical">GRACETA ULINA</span>
+                </div>
+
+                <div class="about-info">
+                    <p class="section-subtitle">- About Me</p>
+                    <h2 class="judul-section">
+                        Who is <span class="text-primary">Graceta Ulina?</span>
+                    </h2>
+                    <p class="bio-text">
+                        Graceta is a UI/UX Designer and Computer Science Education student who
+                        blends logic with creativity. She’s passionate about crafting intuitive,
+                        meaningful digital experiences that connect people through thoughtful
+                        design.
+                    </p>
+
+                    <div class="metrics">
+                        <p><strong class="count">20+</strong> Project Completed</p>
+                        <p><strong class="count">20+</strong> Industry Covered</p>
+                    </div>
+
+                    <div class="about-actions">
+                        <button class="btn btn-secondary" id="downloadBtn">Download CV</button>
+                        <span class="signature">Graceta Ulina</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education-work-section" id="education">
+            <div class="container">
+                <p class="section-subtitle center-text">- Education & Work</p>
+                <h2 class="judul-section center-text">My Education & Work Experience</h2>
+
+                <div class="timeline-container">
+                    <div class="timeline-card">
+                        <div class="timeline-icon-header">
+                            <span class="icon-badge"><i class="fas fa-graduation-cap"></i></span>
+                            <span class="sub-title-section">Education</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-years">2012 - 2018</span>
+                            <p class="timeline-title">Elementary School</p>
+                            <p class="timeline-subtitle">SD Santo Yusup Cimahi</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-years">2018 - 2021</span>
+                            <p class="timeline-title">Junior High School</p>
+                            <p class="timeline-subtitle">SMPN 9 Cimahi</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-years">2021 - 2024</span>
+                            <p class="timeline-title">Senior High School</p>
+                            <p class="timeline-subtitle">SMAN 3 Cimahi</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-years">2024 - Present</span>
+                            <p class="timeline-title">
+                                Bachelor’s Degree in <br />Computer Science Education
+                            </p>
+                            <p class="timeline-subtitle">Universitas Pendidikan Indonesia (UPI)</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-icon-header">
+                            <span class="icon-badge"><i class="fas fa-briefcase"></i></span>
+                            <span class="sub-title-section">Work Experience</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-years">2021 - 2025</span>
+                            <p class="timeline-title">Senior Product Designer</p>
+                            <p class="timeline-subtitle">Footprint Solutions</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-years">2023 - 2025</span>
+                            <p class="timeline-title">Web Developer</p>
+                            <p class="timeline-subtitle">Footprint Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-projects-section" id="project">
+            <div class="container">
+                <p class="section-subtitle center-text">- My Works</p>
+                <h2 class="judul-section center-text">Latest Projects</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card-item">
+                        <img
+                            src="images/project2.png"
+                            alt="Project Mobile Banking App"
+                            class="project-image"
+                        />
+                        <div class="project-details">
+                            <span class="project-category">Web Design, UI/UX</span>
+                            <h3 class="project-title">Clinic Management System</h3>
+                            <p class="project-description">
+                                A case study on redesigning a modern clinic website to enhance
+                                accessibility, improve user engagement, and simplify patient
+                                services efficiently.
+                            </p>
+                            <a href="#" class="btn btn-outline-primary small-btn"
+                                >View Case Study &rarr;</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="project-card-item">
+                        <img
+                            src="images/project1.png"
+                            alt="Project E-Learning Dashboard"
+                            class="project-image"
+                        />
+                        <div class="project-details">
+                            <span class="project-category">Web Design, Dashboard</span>
+                            <h3 class="project-title">E-Learning User Dashboard</h3>
+                            <p class="project-description">
+                                Designing a user-friendly dashboard for students to access courses,
+                                track learning progress, and manage their study activities
+                                efficiently.
+                            </p>
+                            <a href="#" class="btn btn-outline-primary small-btn"
+                                >View Case Study &rarr;</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="center-text view-all-projects">
+                    <button class="btn btn-secondary dm-sans fw-600" id="tampilkan">
+                        View All Projects
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-skills-section" id="skills">
+            <div class="container skills-wrapper">
+                <div class="skills-info">
+                    <p class="section-subtitle">- My Skills</p>
+                    <h2 class="judul-section">
+                        My <span class="text-primary">Design & Dev</span> Skills
+                    </h2>
+                    <p class="bio-text">
+                        Blending creative design thinking with technical development knowledge to
+                        deliver end-to-end product solutions that are both beautiful and functional.
+                    </p>
+                </div>
+
+                <div class="skills-list">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">UI/UX & Design Tools</h3>
+                        <ul class="tag-list">
+                            <li>Figma</li>
+                            <li>Wireframing</li>
+                            <li>Prototyping</li>
+                            <li>User Research</li>
+                            <li>Design Systems</li>
+                            <li>Adobe Illustrator</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Web & Dev Stack</h3>
+                        <ul class="tag-list">
+                            <li>HTML5</li>
+                            <li>CSS3 (Sass)</li>
+                            <li>JavaScript</li>
+                            <li>Bootstrap</li>
+                            <li>Responsive Design</li>
+                            <li>Git/GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Grace</div>
+                    <p>Product Designer & Web Developer</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#service">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#education">Education & Work Experience</a>
+                    <a href="#project">Projects</a>
+                    <a href="#skills">Skills</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/gracetaulina/" aria-label="LinkedIn"
+                        ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    <a
+                        href="https://www.instagram.com/ulinagracee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        aria-label="Instagram"
+                        ><i class="fab fa-instagram"></i
+                    ></a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <div class="container">
+                    <p>© 2025 Grace. All rights reserved. Designed & Built by Graceta Ulina.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+            document.getElementById('downloadBtn').addEventListener('click', () => {
+                const link = document.createElement('a')
+                link.href = 'assets/portofolio.pdf'
+                link.download = 'cv_graceta.pdf'
+                link.click()
+            })
+        </script>
+        <script>
+            function tampilkan_pesan() {
+                alert('Grace Pinter aduhay!')
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        div button{
+            background-color: aliceblue;
+            padding: 1vh;
+            border-radius: 10px;
+        }
+
+        div button:hover{
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        div button:active{
+           transform: scale(0.8);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'calc-dark': '#1e293b',
+                        'calc-darker': '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-960 min-h-screen flex items-center justify-center p-4">
+    
+    <div class="w-full max-w-3xl">
+        <!--  Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+            
+
+
+            <!-- History  -->
+            <div class="bg-calc-dark rounded-3xl shadow-2xl p-6 border border-slate-700 lg:col-span-1">
+                <h2 class="text-white text-xl font-bold mb-4 text-center">History</h2>
+    
+                <!-- isi history-->
+                <div id="historyList" class="space-y-2 max-h-[500px] overflow-y-auto">
+                    <p class="text-slate-400 text-center text-sm">Belum ada riwayat</p>
+                </div>
+
+                <button class="w-full mt-4 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition" onclick="clearhistory()">Clear History</button>
+            </div>
+            
+            <!-- Calculator Container -->
+            <div class="bg-calc-dark rounded-3xl shadow-2xl p-6 border border-slate-700 lg:col-span-2">
+                <!-- Title -->
+                <h1 class="text-white text-2xl font-bold mb-6 text-center">Kalkulator Sederhana</h1>
+                
+                <!-- Display -->
+                <div class="bg-calc-darker rounded-2xl p-6 mb-6 shadow-inner">
+                    <div class="text-right">
+                        <div id="currentOperand" class="text-white text-4xl font-mono font-bold break-all min-h-12">0</div>
+                    </div>
+                </div>
+                
+                <!-- Buttons -->
+                <div class="grid grid-cols-4 gap-2">
+                    <!-- Row 1 -->
+                    <button class="calc-btn calc-btn-function bg-red-900 text-white" onclick="calculator.clear()">AC</button>
+                    <button class="calc-btn calc-btn-function bg-red-600 text-white" onclick="calculator.delete()">DEL</button>
+                    <button class="calc-btn calc-btn-operator" onclick="calculator.appendNumber('/')">÷</button>
+                    <button class="calc-btn calc-btn-equals" onclick="calculator.appendNumber('(')">(</button>
+                    
+                    <!-- Row 2 -->
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('7')">7</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('8')">8</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('9')">9</button>
+                    <button class="calc-btn calc-btn-operator" onclick="calculator.appendNumber('*')">×</button>
+                    
+                    <!-- Row 3 -->
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('4')">4</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('5')">5</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('6')">6</button>
+                    <button class="calc-btn calc-btn-operator" onclick="calculator.appendNumber('-')">-</button>
+                    
+                    <!-- Row 4 -->
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('1')">1</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('2')">2</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('3')">3</button>
+                    <button class="calc-btn calc-btn-operator" onclick="calculator.appendNumber('+')">+</button>
+                    
+                    <!-- Row 5 -->
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('0')">0</button>
+                    <button class="calc-btn calc-btn-number" onclick="calculator.appendNumber('.')">.</button>
+                    <button class="calc-btn calc-btn-equals" onclick="calculator.appendNumber(')')">)</button>
+                    <button class="calc-btn calc-btn-equals" onclick="calculator.compute()">=</button>
+                </div>
+            </div>
+        
+        </div>
+        
+        <!-- Footer -->
+        <p class="text-center text-slate-400 text-sm text-white">Hibareit make tailwinds</p>
+    </div>
+
+    <script src="script.js"></script>
+    
+    
+</body>
+</html>

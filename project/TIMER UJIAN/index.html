@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Ujian - Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-clock"></i>
+                <h1>Timer Ujian</h1>
+            </div>
+            <button class="settings-btn" id="settingsBtn">
+                <i class="fas fa-cog"></i>
+            </button>
+        </header>
+
+        <!-- Main Timer Display -->
+        <div class="timer-container">
+            <div class="timer-circle">
+                <svg class="progress-ring" width="300" height="300">
+                    <circle class="progress-ring-circle-bg" cx="150" cy="150" r="140" />
+                    <circle class="progress-ring-circle" cx="150" cy="150" r="140" />
+                </svg>
+                <div class="timer-display">
+                    <div class="time-label">Waktu Tersisa</div>
+                    <div class="time" id="timeDisplay">90:00</div>
+                    <div class="time-label-small">menit : detik</div>
+                </div>
+            </div>
+
+            <!-- Subject Info -->
+            <div class="subject-info">
+                <input type="text" id="subjectInput" placeholder="Nama Mata Kuliah" class="subject-input" />
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button class="btn btn-primary" id="startBtn">
+                    <i class="fas fa-play"></i> Mulai
+                </button>
+                <button class="btn btn-secondary" id="pauseBtn" disabled>
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button class="btn btn-danger" id="resetBtn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="btn-quick btn-minus" id="minus10Btn">
+                    <i class="fas fa-minus"></i> 10 Menit
+                </button>
+                <button class="btn-quick btn-plus" id="plus10Btn">
+                    <i class="fas fa-plus"></i> 10 Menit
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Bar Section -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span class="progress-label">Progress Waktu</span>
+                <span class="progress-percentage" id="progressPercentage">100%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-stats">
+                <div class="stat-item">
+                    <i class="fas fa-hourglass-start"></i>
+                    <span>Durasi: <strong id="totalDuration">1:30:00</strong></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Tersisa: <strong id="remainingTime">1:30:00</strong></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hourglass-end"></i>
+                    <span>Terpakai: <strong id="elapsedTime">00:00</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Pengaturan Timer</h2>
+                <button class="close-btn" id="closeModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label for="hoursInput">Jam</label>
+                    <input type="number" id="hoursInput" min="0" max="23" value="1" />
+                </div>
+                <div class="setting-item">
+                    <label for="minutesInput">Menit</label>
+                    <input type="number" id="minutesInput" min="0" max="59" value="30" />
+                </div>
+                <div class="setting-item">
+                    <label for="soundToggle">
+                        <i class="fas fa-volume-up"></i> Suara Alarm
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" id="soundToggle" checked />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="saveSettingsBtn">
+                    <i class="fas fa-save"></i> Simpan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Timer selesai!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
