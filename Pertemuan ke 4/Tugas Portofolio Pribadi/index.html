@@ -10,10 +10,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+    <style>
+        /* Force navbar link styles on hosting environments */
+        header nav a,
+        header nav a:link,
+        header nav a:visited { color:#fff !important; text-decoration:none !important; }
+        header nav a:hover,
+        header nav a:active { color:#E6EEF3 !important; text-decoration:none !important; }
+        header nav ul li:hover > a { color:#E6EEF3 !important; }
+        
+        /* Highlight Assignments link */
+        header nav ul li:last-child a {
+            background-color: #8ab4c7 !important;
+            color: #121417 !important;
+            padding: 1vh 2vh !important;
+            border-radius: 5vh !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        header nav ul li:last-child a:hover {
+            background-color: #a8c9d9 !important;
+            transform: scale(1.05) !important;
+            box-shadow: 0 2px 8px rgba(138, 180, 199, 0.4) !important;
+        }
+    </style>
 </head>
 <body>
-    <header>
+   <header>
         <nav>
             <h1>Calisbare</h1>
             <ul>

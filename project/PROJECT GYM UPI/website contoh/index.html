@@ -10,18 +10,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+    <style>
+        /* Force navbar link styles on hosting environments */
+        header nav a,
+        header nav a:link,
+        header nav a:visited { color:#fff !important; text-decoration:none !important; }
+        header nav a:hover,
+        header nav a:active { color:#E6EEF3 !important; text-decoration:none !important; }
+        header nav ul li:hover > a { color:#E6EEF3 !important; }
+    </style>
 </head>
 <body>
-    <header>
+   <header>
         <nav>
             <h1>Calisbare</h1>
             <ul>
-                <li><a href="#aboutme">About</a></li>
-                <li><a href="#skill">Skills</a></li>
-                <li><a href="#portofolio">Portofolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="./Page/assignments.html">Assignments</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#aboutme">About</a></li>
+                <li><a href="../index.html#skill">Skills</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../index.html">Portofolio</a></li>
             </ul>
         </nav>
     </header>

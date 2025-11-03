@@ -4,9 +4,7 @@ html, body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-   font-family: Poppins;
-    background-color: #121417;
-    scroll-behavior: smooth;
+   
 }
 
 *{
@@ -108,13 +106,6 @@ header nav ul {
     font-size: 2vh;
     transition: 0.3s;
 }
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
-
 header nav ul li {
     transition: 0.4s;
 
@@ -125,10 +116,6 @@ header nav ul li:hover {
     transform: scale(1.1);
     cursor: pointer;
 
-}
-
-header nav ul li a:hover {
-    color: #181A1F;
 }
 
 @media (max-width: 1000px) {
@@ -324,17 +311,17 @@ section {
 
 
 #contact {
-    background-color: white;
     color: black;
     box-shadow: none;
     font-size: 3vh;
     align-items: center;
     justify-content: center;
-    display: flex;
+     display: flex;
     flex-direction: column;
     font-size: 2vh;
     padding: 5vh;
     gap: 2vh;
+   
 }
 
 
