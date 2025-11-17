@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - Tugas Pemrograman Internet</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            padding-top: 76px;
+            background-color: #f8f9fa;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #fff !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            max-height: calc(100vh - 110px);
+            overflow-y: auto;
+        }
+        
+        .sidebar h5 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+        
+        .sidebar .nav-link {
+            color: #495057;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .sidebar .nav-link i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .sidebar .nav-link:hover {
+            background-color: #f8f9fa;
+            color: #667eea;
+        }
+        
+        .sidebar .nav-link:active,
+        .sidebar .nav-link:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .sidebar .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .sidebar .nav-link.active:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        /* Assignment Cards */
+        .assignment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .assignment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-header-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .card-header-custom h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #212529;
+            margin: 0;
+        }
+        
+        .badge-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .description {
+            color: #6c757d;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .preview-image {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .preview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .card-footer-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .btn-view {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-view:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+                max-height: none;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .card-header-custom h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Calisbare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#aboutme">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#skill">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#portofolio">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1>Assignments</h1>
+            <p class="mb-2">Kumpulan Tugas Pemrograman Internet</p>
+            <p class="mb-0">Muhamad Akbar Imron [2404565]</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="sidebar">
+                    <h5><i class="fas fa-list-ul me-2"></i>Daftar Tugas</h5>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" href="#tugas1">
+                            <i class="fas fa-users"></i>
+                            <span>Tugas 1 - Tim Frontend & Backend</span>
+                        </a>
+                        <a class="nav-link" href="#tugas2">
+                            <i class="fas fa-code"></i>
+                            <span>Tugas 2 - Kerangka HTML</span>
+                        </a>
+                        <a class="nav-link" href="#tugas3">
+                            <i class="fas fa-palette"></i>
+                            <span>Tugas 3 - Tampilan Section HTML</span>
+                        </a>
+                        <a class="nav-link" href="#tugas4">
+                            <i class="fas fa-bars"></i>
+                            <span>Tugas 4 - Sidebar</span>
+                        </a>
+                        <a class="nav-link" href="#tugas5">
+                            <i class="fab fa-js-square"></i>
+                            <span>Tugas 5 - Javascript</span>
+                        </a>
+                        <a class="nav-link" href="#tugas6">
+                            <i class="fas fa-calculator"></i>
+                            <span>Tugas 6 - Kalkulator</span>
+                        </a>
+                        <a class="nav-link" href="#tugas7">
+                            <i class="bi bi-bootstrap-fill"></i>
+                            <span>Tugas 7 - Bootstrap</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Assignment Cards -->
+            <div class="col-lg-9">
+                <!-- Tugas 1 -->
+                <article id="tugas1" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 1 - Tim Frontend & Backend</h2>
+                        <span class="badge-custom">Pertemuan 1</span>
+                    </div>
+                    <p class="description">
+                        Dokumentasi pembagian tim Frontend dan Backend dalam pengembangan web. 
+                        Memahami peran dan tanggung jawab masing-masing tim dalam proses development.
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/tim.png" alt="Preview Tugas 1" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">PDF</span>
+                            <span class="tech">Dokumentasi</span>
+                        </div>
+                        <a href="./Tugas 1 [ss tim pertemuan 1]/(TUGAS 1) 01_PILKOMB_LKPD_fvb_dan_strukdat_dalam_web.pdf" target="_blank" class="btn-view">
+                            <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Tugas 2 -->
+                <article id="tugas2" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 2 - Kerangka HTML</h2>
+                        <span class="badge-custom">Pertemuan 2</span>
+                    </div>
+                    <p class="description">
+                        Membuat kerangka halaman HTML dengan struktur dasar yang baik. 
+                        Implementasi tag semantik HTML5 untuk membuat struktur web yang terorganisir.
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/html.png" alt="Preview Tugas 2" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">HTML5</span>
+                        </div>
+                        <a href="./Tugas 2 [Html kerangka]/tugas 1.html" target="_blank" class="btn-view">
+                            <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Tugas 3 -->
+                <article id="tugas3" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 3 - Tampilan Section HTML</h2>
+                        <span class="badge-custom">Pertemuan 3</span>
+                    </div>
+                    <p class="description">
+                        Dokumentasi tampilan per section dalam halaman web. 
+                        Memahami cara membagi konten menjadi section-section yang terstruktur dan semantik.
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/section.png" alt="Preview Tugas 3" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">PDF</span>
+                            <span class="tech">Dokumentasi</span>
+                        </div>
+                        <a href="./Tugas 3 [ss tampilan persection]/Muhamad Akbar Imron_2404565_Tugas Pertemuan 3 Promnet.pdf" target="_blank" class="btn-view">
+                            <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Tugas 4 -->
+                <article id="tugas4" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 4 - Sidebar</h2>
+                        <span class="badge-custom">Pertemuan 4</span>
+                    </div>
+                    <p class="description">
+                        Membuat layout dengan sidebar menggunakan HTML dan CSS. 
+                        Implementasi sidebar navigation yang responsif dan interaktif untuk meningkatkan user experience.
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/aside.png" alt="Preview Tugas 4" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">HTML5</span>
+                            <span class="tech">CSS3</span>
+                        </div>
+                        <a href="./tugas 4 [sidebar]/04-studi_kasus.html" target="_blank" class="btn-view">
+                            <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Tugas 5 -->
+                <article id="tugas5" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 5 - Javascript</h2>
+                        <span class="badge-custom">Pertemuan 5</span>
+                    </div>
+                    <p class="description">
+                        Membuat halaman web interaktif menggunakan JavaScript. 
+                        Implementasi DOM manipulation, event handling, dan logika JavaScript untuk membuat web lebih dinamis.
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/javascript.png" alt="Preview Tugas 5" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">HTML5</span>
+                            <span class="tech">CSS3</span>
+                            <span class="tech">JavaScript</span>
+                        </div>
+                        <a href="./tugas 5 [Javascript]/index.html" target="_blank" class="btn-view">
+                            <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Tugas 6 -->
+                <article id="tugas6" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 6 - Kalkulator</h2>
+                        <span class="badge-custom">Pertemuan 6</span>
+                    </div>
+                    <p class="description">
+                        Membuat aplikasi kalkulator sederhana menggunakan HTML, CSS, dan JavaScript. 
+                        Implementasi operasi matematika dasar dengan interface yang user-friendly dan responsif.
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/kalkulator.png" alt="Preview Tugas 6" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">HTML5</span>
+                            <span class="tech">CSS3</span>
+                            <span class="tech">JavaScript</span>
+                        </div>
+                        <a href="./tugas 6 [Kalkulator]/kalkulator.html" target="_blank" class="btn-view">
+                            <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+                 <!-- Tugas 7 -->
+                <article id="tugas7" class="assignment-card">
+                    <div class="card-header-custom">
+                        <h2>Tugas 7 - Bootstrap</h2>
+                        <span class="badge-custom">Pertemuan 7</span>
+                    </div>
+                    <p class="description">
+                        Eksplorasi lengkap Bootstrap sederhana dengan fokus pada penggunaan fungsinya
+                    </p>
+                    <div class="preview-image">
+                        <img src="../thumbnail/boostrap.png" alt="Preview Tugas 7" onerror="this.style.display='none'">
+                    </div>
+                    <div class="card-footer-custom">
+                        <div class="tech-stack">
+                            <span class="tech">HTML5</span>
+                            <span class="tech">CSS3</span>
+                            <span class="tech">Bootstrap 5</span>
+                            <span class="tech">Bootstrap Icons</span>
+                        </div>
+                        <a href="./tugas 7 [Bootstrap Icons]/Tugas dan evaluasi.html" target="_blank" class="btn-view">
+                          <i class="fas fa-external-link-alt"></i> Lihat Tugas
+                        </a>
+                    </div>
+                </article>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Akbar Imron. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // Click handler untuk sidebar navigation 
+        document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Remove active class from all sidebar links
+                document.querySelectorAll('.sidebar .nav-link').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+            });
+        });
+
+       
+    </script>
+</body>
+</html>
