@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akbar Imron - Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            padding-top: 76px; 
+        }
+        
+        /* Navbar Custom Styles */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #fff !important;
+            transform: translateY(-2px);
+        }
+        
+        .navbar-nav .btn-assignments {
+            background-color: #8ab4c7 !important;
+            color: #121417 !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+            padding: 0.5rem 1.5rem !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .navbar-nav .btn-assignments:hover {
+            background-color: #a8c9d9 !important;
+            transform: translateY(-2px) scale(1.05) !important;
+            box-shadow: 0 4px 15px rgba(138, 180, 199, 0.4) !important;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-custom {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .btn-custom-primary {
+            background-color: white;
+            color: #667eea;
+            border: 2px solid white;
+        }
+        
+        .btn-custom-primary:hover {
+            background-color: #667eea;
+            color: white;
+            border: 2px solid white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-custom-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-custom-outline:hover {
+            background-color: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: block;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        #aboutme {
+            background-color: #f8f9fa;
+        }
+        
+        #aboutme img {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Skills Section */
+        .skill-badge {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 0.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .skill-badge-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Portfolio Section */
+        #portofolio {
+            background-color: #f8f9fa;
+        }
+        
+        .portfolio-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .portfolio-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .portfolio-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-card .card-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .contact-btn i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-btn-instagram {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+        }
+        
+        .contact-btn-youtube {
+            background-color: #FF0000;
+            color: white;
+        }
+        
+        .contact-btn-linkedin {
+            background-color: #0077b5;
+            color: white;
+        }
+        
+        .contact-btn-email {
+            background-color: #EA4335;
+            color: white;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            #hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Fade In Animation */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Different animation delays for staggered effect */
+        .fade-in-element:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        
+        .fade-in-element:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        
+        .fade-in-element:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">Calisbare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutme">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skill">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portofolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-assignments" href="./Page/assignments.html">Assignments</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="mb-4">Hi,<br>I'm Muhamad Akbar Imron</h1>
+                    <p class="lead">Backend Developer and Professional Video Editor</p>
+                    <div class="mt-4">
+                        <a href="./download/CV_Muhamad akbar imron.pdf" class="btn btn-custom btn-custom-primary">
+                            <i class="fas fa-download me-2"></i>Download CV
+                        </a>
+                        <a href="https://wa.me/6281999782893" target="_blank" class="btn btn-custom btn-custom-outline">
+                            <i class="fab fa-whatsapp me-2"></i>Contact Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="aboutme">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0 fade-in-left">
+                    <img src="assets/foto bare.png" alt="Akbar Imron" class="img-fluid">
+                </div>
+                <div class="col-lg-7 fade-in-right">
+                    <h2 class="section-title text-start">About Me</h2>
+                    <p class="lead">
+                        Saya adalah seorang Backend Developer yang bersemangat dalam membangun sistem yang kuat dan efisien. Dengan keahlian mendalam dalam bahasa pemrograman seperti Python, Javascript, PHP, dan SQL, saya mampu menciptakan solusi web development yang solid dan terintegrasi.
+                    </p>
+                    <p>
+                        Saya senang memecahkan masalah kompleks dan selalu mencari cara inovatif untuk meningkatkan performa dan fungsionalitas aplikasi.
+                    </p>
+                    <p class="mb-0">
+                        Silakan Download CV saya untuk melihat detail lebih lanjut mengenai pengalaman dan proyek-proyek yang telah saya kerjakan, atau Contact Now jika Anda ingin berdiskusi lebih lanjut.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skill">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Skills</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center fade-in-up">
+                        <span class="skill-badge skill-badge-primary">Python</span>
+                        <span class="skill-badge skill-badge-primary">Javascript</span>
+                        <span class="skill-badge skill-badge-primary">PHP and SQL</span>
+                        <span class="skill-badge skill-badge-primary">Web Development</span>
+                        <span class="skill-badge skill-badge-secondary">VFX Editor</span>
+                        <span class="skill-badge skill-badge-secondary">Motion Graphic Editor</span>
+                        <span class="skill-badge skill-badge-secondary">Graphic Designer</span>
+                        <span class="skill-badge skill-badge-secondary">Cinematography</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portofolio">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Portfolio</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-4 fade-in-element">
+                    <div class="card portfolio-card">
+                        <img src="./assets/landingpage.png" class="card-img-top" alt="Landing Page">
+                        <div class="card-body">
+                            <h5 class="card-title">Landing Page Sederhana</h5>
+                            <p class="card-text">Membuat landing page sederhana menggunakan framework Bootstrap.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-in-element">
+                    <div class="card portfolio-card">
+                        <img src="./assets/login.png" class="card-img-top" alt="Login Page">
+                        <div class="card-body">
+                            <h5 class="card-title">Working Login Page with Backend</h5>
+                            <p class="card-text">Backend dengan PHP dan MySQL, serta frontend menggunakan HTML, CSS, dan JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-in-element">
+                    <div class="card portfolio-card">
+                        <img src="./assets/counter.png" class="card-img-top" alt="Counter">
+                        <div class="card-body">
+                            <h5 class="card-title">Simple Counter Javascript</h5>
+                            <p class="card-text">Membuat counter sederhana menggunakan JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center fade-in-up">
+                <a href="https://www.linkedin.com/in/muhamad-akbar-imron-31196131a/" target="_blank" class="btn btn-custom btn-custom-primary btn-lg">
+                    <i class="fab fa-linkedin me-2"></i>Lihat Semua Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 fade-in-up">
+                    <a href="https://www.instagram.com/akbar_diy/" target="_blank" class="contact-btn contact-btn-instagram">
+                        <i class="fab fa-instagram"></i>akbar_diy
+                    </a>
+                    <a href="https://www.youtube.com/@Calisbare" target="_blank" class="contact-btn contact-btn-youtube">
+                        <i class="fab fa-youtube"></i>Calisbare
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhamad-akbar-imron-31196131a/" target="_blank" class="contact-btn contact-btn-linkedin">
+                        <i class="fab fa-linkedin"></i>Muhamad Akbar Imron
+                    </a>
+                    <a href="mailto:akbarimrons@gmail.com" class="contact-btn contact-btn-email">
+                        <i class="fas fa-envelope"></i>akbarimrons@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Akbar Imron. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scroll untuk semua link dengan href yang dimulai dengan #
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const fadeInElements = document.querySelectorAll('.fade-in-element, .fade-in-left, .fade-in-right, .fade-in-up');
+        
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+
+    </script>
+</body>
+</html>
