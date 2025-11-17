@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GYMUPI - Mahasiswa Sehat & Cerdas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <title>{{ config('app.name', 'GYMUPI') }} - Mahasiswa Sehat & Cerdas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS CDN for quick development -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -42,9 +50,15 @@
                 </ul>
                 
                 <!-- CTA Button -->
-                <button class="hidden md:block bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-lg transition duration-300 transform hover:scale-105">
-                    Pesan Sekarang
-                </button>
+                @auth
+                    <a href="{{ route('dashboard') }}" class="hidden md:block bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-lg transition duration-300 transform hover:scale-105">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('register') }}" class="hidden md:block bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-lg transition duration-300 transform hover:scale-105">
+                        Daftar Sekarang
+                    </a>
+                @endauth
                 
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden text-white">
@@ -68,9 +82,15 @@
                     <p class="text-xl md:text-2xl text-gray-300 mb-8">
                         Wujudkan tubuh ideal dan hidup sehat bersama GYMUPI 
                     </p>
-                    <button class="bg-primary hover:bg-accent text-white font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                        Mulai Sekarang
-                    </button>
+                    @guest
+                        <a href="{{ route('register') }}" class="inline-block bg-primary hover:bg-accent text-white font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                            Mulai Sekarang
+                        </a>
+                    @else
+                        <a href="{{ route('dashboard') }}" class="inline-block bg-primary hover:bg-accent text-white font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                            Lihat Dashboard
+                        </a>
+                    @endguest
                 </div>
             </div>
         </section>
@@ -117,9 +137,9 @@
                         <p class="text-2xl md:text-3xl font-semibold mb-8">
                             BEBAS BEROLAHRAGA!
                         </p>
-                        <button class="bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                        <a href="{{ route('register') }}" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
                             Pesan Sekarang
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -253,16 +273,34 @@
                         </p>
                     </div>
                     <div class="bg-white/10 backdrop-blur rounded-2xl p-8">
-                        <form class="space-y-4">
+                        <form action="{{ route('newsletter.subscribe') }}" method="POST" class="space-y-4">
+                            @csrf
                             <div class="grid md:grid-cols-2 gap-4">
-                                <input type="text" placeholder="Nama Depan" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                                <input type="text" placeholder="Nama Belakang" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                                <input type="text" name="first_name" placeholder="Nama Depan" required class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" value="{{ old('first_name') }}">
+                                <input type="text" name="last_name" placeholder="Nama Belakang" required class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" value="{{ old('last_name') }}">
                             </div>
                             <div class="grid md:grid-cols-2 gap-4">
-                                <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                                <input type="tel" placeholder="Nomor Telepon" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                                <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" value="{{ old('email') }}">
+                                <input type="tel" name="phone" placeholder="Nomor Telepon" required class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" value="{{ old('phone') }}">
                             </div>
-                            <textarea placeholder="Pesan (Opsional)" rows="4" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
+                            <textarea name="message" placeholder="Pesan (Opsional)" rows="4" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary resize-none">{{ old('message') }}</textarea>
+                            
+                            @if(session('success'))
+                                <div class="bg-green-500/20 border border-green-500 text-white px-4 py-3 rounded-lg">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                            
+                            @if($errors->any())
+                                <div class="bg-red-500/20 border border-red-500 text-white px-4 py-3 rounded-lg">
+                                    <ul class="list-disc list-inside">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            
                             <button type="submit" class="w-full bg-primary hover:bg-accent text-white font-semibold px-6 py-4 rounded-lg transition duration-300 transform hover:scale-105">
                                 Submit
                             </button>
@@ -330,7 +368,7 @@
         <div class="border-t border-gray-700">
             <div class="container mx-auto px-6 py-6">
                 <p class="text-center text-gray-400 text-sm">
-                    © 2025 GYMUPI - Muhamad Akbar Imron. All Rights Reserved.
+                    © {{ date('Y') }} {{ config('app.name', 'GYMUPI') }} - Muhamad Akbar Imron. All Rights Reserved.
                 </p>
             </div>
         </div>

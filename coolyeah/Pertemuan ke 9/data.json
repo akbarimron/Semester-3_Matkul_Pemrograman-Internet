@@ -1,0 +1,58 @@
+{
+  "mahasiswa": [
+    {
+      "id": 1,
+      "nama": "Muhamad Akbar Imron",
+      "npm": "2404565",
+      "email": "akbar@example.com",
+      "prodi": "Teknik Informatika",
+      "semester": 5,
+      "nilai_rata_rata": 3.75
+    },
+    {
+      "id": 2,
+      "nama": "Siti Nurhaliza",
+      "npm": "2404566",
+      "email": "siti@example.com",
+      "prodi": "Sistem Informasi",
+      "semester": 5,
+      "nilai_rata_rata": 3.85
+    },
+    {
+      "id": 3,
+      "nama": "Budi Santoso",
+      "npm": "2404567",
+      "email": "budi@example.com",
+      "prodi": "Teknik Komputer",
+      "semester": 5,
+      "nilai_rata_rata": 3.65
+    },
+    {
+      "id": 4,
+      "nama": "Ani Wijaya",
+      "npm": "2404568",
+      "email": "ani@example.com",
+      "prodi": "Pendidikan Teknik Informatika",
+      "semester": 5,
+      "nilai_rata_rata": 3.90
+    },
+    {
+      "id": 5,
+      "nama": "Riza Pratama",
+      "npm": "2404569",
+      "email": "riza@example.com",
+      "prodi": "Teknik Informatika",
+      "semester": 5,
+      "nilai_rata_rata": 3.55
+    },
+    {
+      "id": 6,
+      "nama": "Dzaki Prima Yoga",
+      "npm": "2404569",
+      "email": "riza@example.com",
+      "prodi": "Pendidikan Teknik Informatika",
+      "semester": 5,
+      "nilai_rata_rata": 1
+    }
+  ]
+}
