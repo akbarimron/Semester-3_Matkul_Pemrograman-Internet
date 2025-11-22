@@ -4,120 +4,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GYMUPI - Mahasiswa Sehat & Cerdas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#ff5252',
-                        secondary: '#181A1F',
-                        accent: '#e53935',
-                    }
-                }
-            }
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #ff5252;
+            --secondary: #181A1F;
+            --accent: #e53935;
         }
-    </script>
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9fafb;
+            scroll-behavior: smooth;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+        
+        .bg-primary-custom {
+            background-color: var(--primary);
+        }
+        
+        .bg-secondary-custom {
+            background-color: var(--secondary);
+        }
+        
+        .text-primary-custom {
+            color: var(--primary);
+        }
+        
+        .shadow-custom {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(255, 82, 82, 0.25);
+        }
+        
+        section {
+            scroll-margin-top: 100px;
+        }
+        
+        img {
+            transition: transform 0.3s ease;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gradient-red {
+            background: linear-gradient(135deg, #ff5252 0%, #e53935 100%);
+        }
+        
+        .gradient-blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+        
+        .gradient-green {
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+        }
+        
+        .gradient-purple {
+            background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+        }
+        
+        .gradient-dark {
+            background: linear-gradient(135deg, #374151 0%, #111827 100%);
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-light">
     <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-secondary shadow-lg">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
+    <header class="bg-secondary-custom shadow">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">GYM</span>
+                <a class="navbar-brand" href="#">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-primary-custom rounded p-2" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+                            <span class="text-white fw-bold fs-5">GYM</span>
+                        </div>
+                        <span class="text-white fw-bold fs-5">GYMUPI</span>
                     </div>
-                    <span class="text-white font-bold text-xl">GYMUPI</span>
-                </div>
+                </a>
+                
+                <!-- Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 
                 <!-- Navigation Links -->
-                <ul class="hidden md:flex items-center space-x-8">
-                    <li><a href="#about" class="text-gray-300 hover:text-white transition duration-200 font-medium">About UPIGYM</a></li>
-                    <li><a href="#gallery" class="text-gray-300 hover:text-white transition duration-200 font-medium">Gallery</a></li>
-                    <li><a href="#trainer" class="text-gray-300 hover:text-white transition duration-200 font-medium">Personal Trainer</a></li>
-                    <li><a href="#terms" class="text-gray-300 hover:text-white transition duration-200 font-medium">Terms & Condition</a></li>
-                    <li><a href="#bmi" class="text-gray-300 hover:text-white transition duration-200 font-medium">Cek BMI</a></li>
-                </ul>
-                
-                <!-- CTA Button -->
-                <button class="hidden md:block bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-lg transition duration-300 transform hover:scale-105">
-                    Pesan Sekarang
-                </button>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-light" href="#about">About UPIGYM</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#trainer">Personal Trainer</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#terms">Terms & Condition</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#bmi">Cek BMI</a></li>
+                    </ul>
+                    <button class="btn btn-primary-custom ms-2">Pesan Sekarang</button>
+                </div>
             </div>
         </nav>
     </header>
-    <main class="pt-16">
+    
+    <!-- Main Content -->
+    <main>
         <!-- Hero Section -->
-        <section id="hero" class="relative bg-gradient-to-br from-gray-800 to-gray-900 text-white min-h-screen flex items-center">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="max-w-3xl">
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                        Mahasiswa Gak Cuma Harus Cerdas<br>
-                        <span class="text-primary">Tapi Juga Sehat</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-300 mb-8">
-                        Wujudkan tubuh ideal dan hidup sehat bersama GYMUPI 
-                    </p>
-                    <button class="bg-primary hover:bg-accent text-white font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                        Mulai Sekarang
-                    </button>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">
+                            Mahasiswa Gak Cuma Harus Cerdas<br>
+                            <span class="text-primary-custom">Tapi Juga Sehat</span>
+                        </h1>
+                        <p class="lead text-secondary mb-4">
+                            Wujudkan tubuh ideal dan hidup sehat bersama GYMUPI 
+                        </p>
+                        <button class="btn btn-primary-custom btn-lg">
+                            Mulai Sekarang
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- About Section -->
-        <section id="about" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <section id="about" class="py-5 bg-white">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4">
                             Gym Universitas Pendidikan Indonesia
                         </h2>
-                        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        <p class="fs-5 text-muted mb-3">
                             GYMUPI adalah fasilitas olahraga modern yang dirancang khusus untuk mahasiswa UPI. 
                             Kami menyediakan peralatan gym berkualitas tinggi dan lingkungan yang mendukung untuk 
                             mencapai tujuan kebugaran Anda.
                         </p>
-                        <p class="text-lg text-gray-600 leading-relaxed">
+                        <p class="fs-5 text-muted">
                             Dengan instruktur berpengalaman dan program latihan yang terstruktur, kami siap membantu 
                             Anda membangun gaya hidup sehat sambil menjalani kehidupan kampus yang produktif.
                         </p>
                     </div>
-                    <div class="relative">
-                        <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center shadow-xl">
-                            <span class="text-gray-400 text-xl font-semibold">Gym Image</span>
-                        </div>
+                    <div class="col-lg-6">
+                        <img src="https://via.placeholder.com/500x400?text=Gym+Facility" alt="Gym" class="img-fluid rounded-3 shadow-custom">
                     </div>
                 </div>
             </div>
         </section>
         <!-- Pricing Section -->
-        <section id="pricing" class="py-20 bg-gradient-to-br from-primary to-accent text-white">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="relative">
-                        <div class="bg-white/10 backdrop-blur rounded-2xl h-96 flex items-center justify-center shadow-xl">
-                            <span class="text-white text-xl font-semibold">Pricing Image</span>
-                        </div>
+        <section id="pricing" class="py-5 gradient-red text-white">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <img src="https://via.placeholder.com/500x400?text=Pricing" alt="Pricing" class="img-fluid rounded-3 shadow-custom">
                     </div>
-                    <div class="text-center md:text-left">
-                        <p class="text-xl mb-4 opacity-90">Harga untuk umum: <span class="font-bold">Rp 5.000</span></p>
-                        <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <p class="fs-5 mb-3 opacity-90">Harga untuk umum: <span class="fw-bold">Rp 5.000</span></p>
+                        <h2 class="display-5 fw-bold mb-4">
                             Khusus Mahasiswa UPI
                         </h2>
-                        <p class="text-2xl md:text-3xl font-semibold mb-8">
+                        <p class="display-6 fw-semibold mb-4">
                             BEBAS BEROLAHRAGA!
                         </p>
-                        <button class="bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                        <button class="btn btn-light btn-lg fw-semibold">
                             Pesan Sekarang
                         </button>
                     </div>
@@ -125,58 +231,68 @@
             </div>
         </section>
         <!-- Personal Trainer Section -->
-        <section id="trainer" class="py-20 bg-gray-900 text-white">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        <section id="trainer" class="py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4">
                             Personal Trainer Mulai
                         </h2>
-                        <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                        <p class="fs-5 text-light mb-4">
                             Coba ngegym dengan bimbingan ahli yang berpengalaman. Dapatkan program latihan yang 
                             disesuaikan dengan kebutuhan dan tujuan fitness Anda.
                         </p>
-                        <button class="bg-primary hover:bg-accent text-white font-bold px-8 py-4 rounded-lg transition duration-300 transform hover:scale-105">
+                        <button class="btn btn-primary-custom btn-lg">
                             Lihat Personal Trainer
                         </button>
                     </div>
-                    <div class="relative">
-                        <div class="bg-gray-800 rounded-2xl h-96 flex items-center justify-center shadow-xl">
-                            <span class="text-gray-500 text-xl font-semibold">Trainer Image</span>
-                        </div>
+                    <div class="col-lg-6">
+                        <img src="https://via.placeholder.com/500x400?text=Personal+Trainer" alt="Trainer" class="img-fluid rounded-3 shadow-custom">
                     </div>
                 </div>
             </div>
         </section>
         <!-- Goals Section -->
-        <section id="goals" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+        <section id="goals" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5 text-dark">
                     Tentukan Goals Mu
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-gradient-to-br from-primary to-accent rounded-2xl h-80 flex items-center justify-center shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                        <span class="text-white text-xl font-semibold">Muscle Gain</span>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gradient-red rounded-3 p-5 shadow-custom text-white card-hover text-center" style="min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-dumbbell fs-1 mb-3"></i>
+                            <span class="fs-5 fw-semibold">Muscle Gain</span>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl h-80 flex items-center justify-center shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                        <span class="text-white text-xl font-semibold">Weight Loss</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gradient-blue rounded-3 p-5 shadow-custom text-white card-hover text-center" style="min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-weight fs-1 mb-3"></i>
+                            <span class="fs-5 fw-semibold">Weight Loss</span>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-green-500 to-green-700 rounded-2xl h-80 flex items-center justify-center shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                        <span class="text-white text-xl font-semibold">Cardio</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gradient-green rounded-3 p-5 shadow-custom text-white card-hover text-center" style="min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-heart-pulse fs-1 mb-3"></i>
+                            <span class="fs-5 fw-semibold">Cardio</span>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl h-80 flex items-center justify-center shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                        <span class="text-white text-xl font-semibold">Flexibility</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="gradient-purple rounded-3 p-5 shadow-custom text-white card-hover text-center" style="min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <i class="fas fa-person-walking fs-1 mb-3"></i>
+                            <span class="fs-5 fw-semibold">Flexibility</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Health Motivation Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <section class="py-5 bg-white text-center">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-4">
                     Tentukan Hidup Sehat
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p class="fs-5 text-muted mx-auto" style="max-width: 60rem;">
                     Kesehatan adalah investasi terbaik untuk masa depan. Mulai perjalanan fitness Anda hari ini 
                     dan rasakan perubahan positif dalam hidup Anda. Dengan dedikasi dan konsistensi, 
                     tubuh ideal dan hidup sehat bukan lagi impian.
@@ -184,156 +300,215 @@
             </div>
         </section>
         <!-- CTA Section -->
-        <section class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-8">
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4">
                     <!-- Card 1 -->
-                    <div class="bg-gradient-to-br from-primary to-accent text-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-3xl font-bold mb-4">Ragu Buat Latihan Sendiri?</h3>
-                        <p class="text-lg mb-6 opacity-90">Coba ngegym dengan personal trainer profesional kami</p>
-                        <button class="bg-white text-primary hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition duration-300">
-                            Lihat Personal Trainer
-                        </button>
+                    <div class="col-md-6">
+                        <div class="gradient-red rounded-3 p-5 text-white shadow-custom card-hover">
+                            <h3 class="fs-4 fw-bold mb-3"><i class="fas fa-user-tie me-2"></i>Ragu Buat Latihan Sendiri?</h3>
+                            <p class="fs-6 mb-4 opacity-90">Coba ngegym dengan personal trainer profesional kami yang berpengalaman</p>
+                            <button class="btn btn-light fw-semibold">
+                                <i class="fas fa-arrow-right me-2"></i>Lihat Personal Trainer
+                            </button>
+                        </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-secondary text-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-3xl font-bold mb-4">Ingin Tahu Lebih Banyak?</h3>
-                        <p class="text-lg mb-6 opacity-90">Tentang GYM UPI - Kami siap membantu</p>
-                        <button class="bg-primary hover:bg-accent font-semibold px-6 py-3 rounded-lg transition duration-300">
-                            Hubungi Kami
-                        </button>
+                    <div class="col-md-6">
+                        <div class="bg-secondary-custom rounded-3 p-5 text-white shadow-custom card-hover">
+                            <h3 class="fs-4 fw-bold mb-3"><i class="fas fa-question-circle me-2"></i>Ingin Tahu Lebih Banyak?</h3>
+                            <p class="fs-6 mb-4 opacity-90">Tentang GYM UPI - Hubungi kami untuk informasi lebih lengkap</p>
+                            <button class="btn btn-primary-custom fw-semibold">
+                                <i class="fas fa-phone me-2"></i>Hubungi Kami
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+        <section id="faq" class="py-5 bg-white">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5 text-dark">
                     Frequently Asked Questions
                 </h2>
-                <div class="max-w-3xl mx-auto space-y-4">
-                    <div class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition duration-200 cursor-pointer">
-                        <h3 class="text-xl font-semibold text-gray-900">Berapa lama durasi latihan yang ideal?</h3>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition duration-200 cursor-pointer">
-                        <h3 class="text-xl font-semibold text-gray-900">Apakah ada program untuk pemula?</h3>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition duration-200 cursor-pointer">
-                        <h3 class="text-xl font-semibold text-gray-900">Bagaimana cara daftar membership?</h3>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition duration-200 cursor-pointer">
-                        <h3 class="text-xl font-semibold text-gray-900">Jam operasional GYMUPI?</h3>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition duration-200 cursor-pointer">
-                        <h3 class="text-xl font-semibold text-gray-900">Apakah tersedia locker?</h3>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition duration-200 cursor-pointer">
-                        <h3 class="text-xl font-semibold text-gray-900">Fasilitas apa saja yang tersedia?</h3>
+                <div class="mx-auto" style="max-width: 45rem;">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <i class="fas fa-clock me-2 text-primary-custom"></i>Berapa lama durasi latihan yang ideal?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Durasi latihan yang ideal adalah 45-60 menit per sesi, 3-4 kali seminggu. Ini cukup untuk memberikan hasil optimal tanpa menyebabkan overtraining.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <i class="fas fa-person me-2 text-primary-custom"></i>Apakah ada program untuk pemula?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Ya, kami memiliki program khusus untuk pemula yang dirancang oleh trainer profesional. Program ini disesuaikan dengan level fitness Anda.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <i class="fas fa-user-check me-2 text-primary-custom"></i>Bagaimana cara daftar membership?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Anda dapat mendaftar membership melalui aplikasi mobile kami atau datang langsung ke lokasi GYMUPI. Proses pendaftaran cepat dan mudah hanya dalam 5 menit.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <i class="fas fa-calendar me-2 text-primary-custom"></i>Jam operasional GYMUPI?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    GYMUPI buka setiap hari dari Senin-Minggu, pukul 06:00 - 22:00 WIB. Kami selalu siap mendukung program fitness Anda!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <i class="fas fa-lock me-2 text-primary-custom"></i>Apakah tersedia locker?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Ya, kami menyediakan locker untuk menyimpan barang berharga Anda selama latihan. Gratis untuk semua member!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <i class="fas fa-dumbbell me-2 text-primary-custom"></i>Fasilitas apa saja yang tersedia?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Fasilitas lengkap kami mencakup: Kardio machines, strength training equipment, free weights, kelas group fitness, sauna, shower facilities, dan nutritionist consultation.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="text-center mt-12">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Gak Nemu Jawaban?</h3>
-                    <button class="bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-lg transition duration-300 transform hover:scale-105">
-                        Hubungi Kami
+                <div class="text-center mt-5">
+                    <h3 class="fs-4 fw-semibold mb-3 text-dark">Gak Nemu Jawaban?</h3>
+                    <p class="text-muted mb-4">Tim support kami siap membantu Anda 24/7</p>
+                    <button class="btn btn-primary-custom btn-lg">
+                        <i class="fas fa-comments me-2"></i>Hubungi Kami Sekarang
                     </button>
                 </div>
             </div>
         </section>
         <!-- Contact Form Section -->
-        <section id="contact" class="py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h2 class="text-4xl font-bold mb-6">Langganan Newsletter</h2>
-                        <p class="text-lg text-gray-300 leading-relaxed">
+        <section id="contact" class="py-5 gradient-dark text-white">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4">Langganan Newsletter</h2>
+                        <p class="fs-5 text-light">
                             Dapatkan informasi terbaru tentang program latihan, tips kesehatan, dan promo spesial 
                             langsung ke email Anda. Jangan lewatkan kesempatan untuk menjadi bagian dari komunitas 
                             GYMUPI yang terus berkembang.
                         </p>
                     </div>
-                    <div class="bg-white/10 backdrop-blur rounded-2xl p-8">
-                        <form class="space-y-4">
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <input type="text" placeholder="Nama Depan" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                                <input type="text" placeholder="Nama Belakang" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                                <input type="tel" placeholder="Nomor Telepon" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <textarea placeholder="Pesan (Opsional)" rows="4" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary resize-none"></textarea>
-                            <button type="submit" class="w-full bg-primary hover:bg-accent text-white font-semibold px-6 py-4 rounded-lg transition duration-300 transform hover:scale-105">
-                                Submit
-                            </button>
-                        </form>
+                    <div class="col-lg-6">
+                        <div class="bg-light bg-opacity-10 rounded-3 p-5" style="backdrop-filter: blur(10px);">
+                            <form class="d-flex flex-column gap-3">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-lg bg-opacity-20 text-white" placeholder="Nama Depan" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-lg bg-opacity-20 text-white" placeholder="Nama Belakang" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
+                                    </div>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control form-control-lg bg-opacity-20 text-white" placeholder="Email" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="tel" class="form-control form-control-lg bg-opacity-20 text-white" placeholder="Nomor Telepon" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
+                                    </div>
+                                </div>
+                                <textarea class="form-control form-control-lg bg-opacity-20 text-white" placeholder="Pesan (Opsional)" rows="4" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;"></textarea>
+                                <button type="submit" class="btn btn-primary-custom btn-lg fw-semibold">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <!-- Footer -->
-    <footer class="bg-secondary text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer class="bg-secondary-custom text-white">
+        <div class="container py-5">
+            <div class="row g-4">
                 <!-- About -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">About UPI GYM</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">About UPI GYM</h5>
+                    <p class="small text-secondary">
                         Fasilitas gym modern untuk mahasiswa UPI yang ingin hidup sehat dan bugar.
                     </p>
                 </div>
                 <!-- Quick Links -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="text-gray-400 hover:text-primary transition">About</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-primary transition">Pricing</a></li>
-                        <li><a href="#trainer" class="text-gray-400 hover:text-primary transition">Trainer</a></li>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#about" class="text-secondary text-decoration-none">About</a></li>
+                        <li><a href="#pricing" class="text-secondary text-decoration-none">Pricing</a></li>
+                        <li><a href="#trainer" class="text-secondary text-decoration-none">Trainer</a></li>
                     </ul>
                 </div>
                 <!-- Services -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Services</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Personal Training</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Group Class</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Nutrition Plan</a></li>
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">Services</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-secondary text-decoration-none">Personal Training</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Group Class</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Nutrition Plan</a></li>
                     </ul>
                 </div>
                 <!-- Contact -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Contact</h3>
-                    <ul class="space-y-2 text-sm text-gray-400">
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="list-unstyled small text-secondary">
                         <li>Email: info@gymupi.ac.id</li>
                         <li>Phone: (022) 1234-5678</li>
                         <li>Location: UPI Bandung</li>
                     </ul>
                 </div>
-                <!-- Social Media -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary hover:bg-accent rounded-full flex items-center justify-center transition">
-                            <span class="text-sm font-bold">IG</span>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-primary hover:bg-accent rounded-full flex items-center justify-center transition">
-                            <span class="text-sm font-bold">FB</span>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-primary hover:bg-accent rounded-full flex items-center justify-center transition">
-                            <span class="text-sm font-bold">TW</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="border-t border-gray-700">
-            <div class="container mx-auto px-6 py-6">
-                <p class="text-center text-gray-400 text-sm">
+        <div class="border-top border-secondary">
+            <div class="container py-3">
+                <p class="text-center small text-secondary mb-0">
                     © 2025 GYMUPI - Muhamad Akbar Imron. All Rights Reserved.
                 </p>
             </div>
         </div>
     </footer>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
