@@ -40,8 +40,8 @@
         .gradient-green { background: linear-gradient(135deg,#10b981 0%,#047857 100%); }
         .gradient-purple { background: linear-gradient(135deg,#a855f7 0%,#7e22ce 100%); }
         .gradient-dark { background: linear-gradient(135deg,#374151 0%,#111827 100%); }
-        .health-motivation { position: relative; background: url("{{ asset('storage/img/dummy.jpg') }}") center center / cover no-repeat; color: #fff; }
-        .health-motivation::before { content:""; position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)); z-index:1; }
+       
+        
         .health-motivation .content-wrapper { position:relative; z-index:2; }
         /* Fade In Animation */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
